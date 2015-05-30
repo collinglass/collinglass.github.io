@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Hi, my name is Collin Glass. I'm from a small city called North Bay, Ontario. My lifestyle consists of writing code, building startups and drinking beer.
+Hi, my name is Collin Glass. I'm a Go and Javascript Developer. I work in a world headed towards complete openness; Open minds, open education, open government. Ping me for anything.

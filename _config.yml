@@ -2,8 +2,7 @@
 title: Collin Glass' Blog
 email: collinglass@gmx.com
 description: > # this means to ignore newlines until "baseurl:"
-  I write code. My passion is creation. When people ask what I want to do when I grow up,
-  I say: I want to design companies for a living.
+  I write go and slay foe.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://collinglass.co" # the base hostname & protocol for your site
 twitter_username: collinglass
