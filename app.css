@@ -1,0 +1,46 @@
+html, body {
+	background-color: #9ED0E6;
+	color: #626262;
+	/*font-family: 'Comfortaa', cursive;*/
+	font-family: 'Source Code Pro', sans-serif;
+	
+}
+
+a, u {
+	color: #626262;
+    text-decoration: none;
+}
+
+.parent {
+	height: 800px;
+	position: relative;
+	text-align: center;
+}
+
+.child {
+	width: 800px;
+	position: absolute;
+	top: 35%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.menu-icon {
+	margin: 20px;
+	opacity: 0;
+}
+
+.link-icon {
+	font-size: 1.5em;
+	margin-left: 10px;
+}
+
+.menu {
+	margin: 20px;
+	float: right;
+
+	> a {
+
+		float: left;
+	}
+}
