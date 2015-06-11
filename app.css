@@ -12,7 +12,7 @@ a, u {
 }
 
 .parent {
-	height: 800px;
+	height: 600px;
 	position: relative;
 	text-align: center;
 }
@@ -20,7 +20,7 @@ a, u {
 .child {
 	width: 800px;
 	position: absolute;
-	top: 35%;
+	top: 45%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
