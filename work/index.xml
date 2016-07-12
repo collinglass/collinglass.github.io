@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Works on Collin Glass</title>
+    <link>https://collinglass.github.io/work/</link>
+    <description>Recent content in Works on Collin Glass</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://collinglass.github.io/work/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title></title>
+      <link>https://collinglass.github.io/work/gamerbet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://collinglass.github.io/work/gamerbet/</guid>
+      <description>
+
+&lt;h3 id=&#34;note&#34;&gt;Note&lt;/h3&gt;
+
+&lt;p&gt;This is by far my most extensive experience as the main Backend architect on a project.
+We created a micro service architecture from scratch.&lt;/p&gt;
+
+&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+
+&lt;p&gt;As a whole, the application polled Riot&amp;rsquo;s API for new games, inserted them into the database through the API. When a new game is inserted, we run a webscraper for each player to get their latest stats. The application also polled Riot&amp;rsquo;s API for recently ended games then updated them if they were present in the database. When a game was successfully ended we sent a Server Sent Event to every web browser to launch a success or completed modal to all users who bet on that game. Through the Web client, users are able to signup for an account, place bets on open games.&lt;/p&gt;
+
+&lt;p&gt;Our application components&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Web client written in Angular.js.&lt;/li&gt;
+&lt;li&gt;API written in Golang&lt;/li&gt;
+&lt;li&gt;PostgreSQL database&lt;/li&gt;
+&lt;li&gt;Website Scraper for LoLKing.com&lt;/li&gt;
+&lt;li&gt;Event Manager&lt;/li&gt;
+&lt;li&gt;Socket.io WebSockets&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/work/gamerbet/architecture.png&#34; alt=&#34;Architecture&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;web-client&#34;&gt;Web client&lt;/h4&gt;
+
+&lt;p&gt;The web client was mostly written by my Co Founder Phil Swanson. It used websockets with a socket.io service to live update games and alert users on wins and losses.&lt;/p&gt;
+
+&lt;h4 id=&#34;api&#34;&gt;API&lt;/h4&gt;
+
+&lt;p&gt;The API consists of a set of HTTP handlers grouped into 3 different access levels: public, authenticated, and secret.&lt;/p&gt;
+
+&lt;h5 id=&#34;public&#34;&gt;Public&lt;/h5&gt;
+
+&lt;p&gt;Public contains all the HTTP requests that are necessary to view the site as a visitor and nothing more. Think, get open games, get leaderboard, and all other visual data.&lt;/p&gt;
+
+&lt;h5 id=&#34;authenticated&#34;&gt;Authenticated&lt;/h5&gt;
+
+&lt;p&gt;Authenticated routes are all routes specific to user actions, that require a logged in user.&lt;/p&gt;
+
+&lt;p&gt;We used token based authentication. The way token based auth works is a user enters a username and password. If the username and password are correct then we give them back a token and store their public user data as a value in Redis and use their token as the key. The client saves the token in their local storage and sends it on every request. Whenever a request is made, the API takes the token out of the HTTP headers and checks if Redis has a value on that key. If it does, we take the necessary data from redis and associate it with the given request. For example, a user is placing a bet. We take his user id and assign it to the new bet object so we&amp;rsquo;ll know who placed that bet when it comes time to pay money out.&lt;/p&gt;
+
+&lt;h5 id=&#34;secret-routes&#34;&gt;Secret routes&lt;/h5&gt;
+
+&lt;p&gt;Secret routes are routes used only by internal services. They are given a unique token that only works with those routes. No client issued token will work with these routes and there are no login routes for these routes. For example, the event manager POSTs new games to the database. We don&amp;rsquo;t want anyone but the event manager to post new games to the database, so we generated a single crypto secure token and hard coded in the event manager and the API.&lt;/p&gt;
+
+&lt;h4 id=&#34;postgresql&#34;&gt;PostgreSQL&lt;/h4&gt;
+
+&lt;p&gt;We used PostgreSQL as our database and used GORM Object Relational Mapper for most interaction and had a few routes using custom joins to optimize their speed.&lt;/p&gt;
+
+&lt;p&gt;We use primary keys, unique constraints and all the other goodies. Additionally, one thing I like to do is use the database for all my validation. I use CHECKs to check validate lengths and characters. It keeps all parts of my application in sync. Error messages are transformed into human readable text and bubbled up all the way to the client.&lt;/p&gt;
+
+&lt;h4 id=&#34;website-scraper&#34;&gt;Website Scraper&lt;/h4&gt;
+
+&lt;p&gt;Riot&amp;rsquo;s API did not have any valuable player stats. Nor was there any other API that existed for this. We created a scraper for the most popular fan made website. It runs an exact match search on the website and returns the stats if the player is found.&lt;/p&gt;
+
+&lt;h4 id=&#34;event-manager&#34;&gt;Event Manager&lt;/h4&gt;
+
+&lt;p&gt;This is the most important peice of the application. My co-founder Phil wrote it originally in python. I later rewrote it in golang. It polled Riot&amp;rsquo;s API for new games and for newly ended games. It then updated our database accordingly. After we realized people didn&amp;rsquo;t care about amateur games (they only wanted to bet on pro players), we added a clause to only add games to our database that contained pro players in the match.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://collinglass.github.io/work/jocuri/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://collinglass.github.io/work/jocuri/</guid>
+      <description>&lt;p&gt;Jocuri Unity 3D is an online gaming site specializing in Unity 3D games.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s a pet project of mine to learn SEO and test experiments.&lt;/p&gt;
+
+&lt;p&gt;The main screen of the website features a Netflix inspired layout of games.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/work/jocuri/1.png&#34; alt=&#34;1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I implemented a block to force users to play without adblock. Adblock agents block the users browser from making any requests to known ad domains and any websites or files with the word &amp;ldquo;ads&amp;rdquo; in it. I created a file called showads.js and added a single global variable called AdblockIsDisabled = true; Then after 30 seconds I check for the presence of this variable. If it&amp;rsquo;s false or undefined, I know the users browser has an adblocker and I replace the game with this message.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/work/jocuri/2.png&#34; alt=&#34;2&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Forms have clear error messages displayed to the user.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/work/jocuri/3.png&#34; alt=&#34;4&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I went with responsive design to handle mobile pages as it allows for quicker updates to the site as a whole.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/work/jocuri/4.png&#34; alt=&#34;5&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://collinglass.github.io/work/liberwave/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://collinglass.github.io/work/liberwave/</guid>
+      <description>&lt;p&gt;Liberwave is a student to student textbook selling app.&lt;/p&gt;
+
+&lt;p&gt;The main screen of the app features a location based search using Google Maps and Google Places API.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/work/liberwave/1.jpg&#34; alt=&#34;1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Students create listings with a beautiful and responsive form. We used Google Books API to autofill the details for known books. Students can also easily take pictures of their book to show the current condition.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/work/liberwave/2.png&#34; alt=&#34;2&#34; /&gt;
+&lt;img src=&#34;img/work/liberwave/4.png&#34; alt=&#34;4&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We chose a side navigation menu that easily slides in and out of view.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/work/liberwave/5.png&#34; alt=&#34;5&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Students are rated after every transaction to ensure accountability.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/work/liberwave/6.png&#34; alt=&#34;6&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can buy and sell multiple books at a time with ease.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/work/liberwave/7.png&#34; alt=&#34;7&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://collinglass.github.io/work/macadamian/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://collinglass.github.io/work/macadamian/</guid>
+      <description>&lt;p&gt;I built a UX dashboard at Macadamian during my 4 month Internship&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/vGXvfMNC9rY&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; allowfullscreen frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
+
+</description>
+    </item>
+    
+  </channel>
+</rss>
