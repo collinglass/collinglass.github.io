@@ -211,6 +211,84 @@
     </item>
     
     <item>
+      <title>GamerBet</title>
+      <link>https://collinglass.github.io/gamerbet/</link>
+      <pubDate>Tue, 09 Aug 2016 08:44:19 -0400</pubDate>
+      
+      <guid>https://collinglass.github.io/gamerbet/</guid>
+      <description>
+
+&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;/h1&gt;
+
+&lt;p&gt;As a whole, the application is a real-time betting platform.&lt;/p&gt;
+
+&lt;p&gt;The application polls Riot&amp;rsquo;s API for new games and inserts them into the database through The Great Gamerbet API. When a new game is added, we run a web scraper for each player to get their latest stats.&lt;/p&gt;
+
+&lt;p&gt;The application polls Riot&amp;rsquo;s API for recently ended games then updates them if they were present in the database. When a game ends we sent a Server Sent Event to every client. Any connected betters get a success or completed modal. Through the web client, users are able to signup for an account and place bets on open games.&lt;/p&gt;
+
+&lt;p&gt;Our application components&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Web client written in Angular.js.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;API written in Golang&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;PostgreSQL database&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Website Scraper for LoLKing.com&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Event Manager&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Socket.io WebSockets&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://collinglass.github.io/img/work/gamerbet/architecture.png&#34; alt=&#34;Architecture&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;web-client&#34;&gt;Web client&lt;/h2&gt;
+
+&lt;p&gt;The web client was written by my co founder Phil Swanson. It uses websockets with a socket.io service to live update games and alert users on wins and losses.&lt;/p&gt;
+
+&lt;h2 id=&#34;api&#34;&gt;API&lt;/h2&gt;
+
+&lt;p&gt;The API consists of a set of HTTP handlers grouped into 3 different access levels.&lt;/p&gt;
+
+&lt;h3 id=&#34;public&#34;&gt;Public&lt;/h3&gt;
+
+&lt;p&gt;Public contains all the HTTP requests that are necessary to view the site as a visitor and nothing more. Think, get open games, get leaderboard, and all other visual data.&lt;/p&gt;
+
+&lt;h3 id=&#34;authenticated&#34;&gt;Authenticated&lt;/h3&gt;
+
+&lt;p&gt;Authenticated routes are all routes specific to user actions. They require the user be logged in.&lt;/p&gt;
+
+&lt;p&gt;We use token based authentication. The way token based auth works in our application is standard. A user enters a username and password. If the username and password are correct, we issue them a secret token. We store their public user data as a value in Redis and use their token as the key. We send them their token in the response to their login request. The client saves the token in their local storage and sends it on every subsequent request.&lt;/p&gt;
+
+&lt;p&gt;Whenever a request is made, the API takes the token out of the HTTP headers and checks if Redis has a value on that key. If it does, we take the necessary data from redis and associate it with the given request. For example, a user is placing a bet. We take his user id and assign it to the new bet object so we&amp;rsquo;ll know who placed that bet when it comes time to pay money out.&lt;/p&gt;
+
+&lt;h3 id=&#34;secret-routes&#34;&gt;Secret routes&lt;/h3&gt;
+
+&lt;p&gt;Secret routes are used only by internal services. Services are given a unique token that only works with those routes. No client issued token will work with these routes and there are no login routes for these routes.&lt;/p&gt;
+
+&lt;p&gt;The event manager POSTs new games to the API. We don&amp;rsquo;t want any maliscious sources to post new games to the API. We generate a single crypto secure token and set it as an ENV variable and use it in the event manager and the API.&lt;/p&gt;
+
+&lt;h2 id=&#34;postgresql&#34;&gt;PostgreSQL&lt;/h2&gt;
+
+&lt;p&gt;We use PostgreSQL as our database. GORM Object Relational Mapper is used for most interaction. We have a few routes using custom joins to optimize their speed.&lt;/p&gt;
+
+&lt;p&gt;We use primary keys, unique constraints and all the other goodies. Additionally, one thing I like to do is use the database for all my validation. I use CHECKs to check validate input lengths and characters. It keeps all parts of my application in sync. Error messages are transformed into human readable text and bubbled up all the way to the client.&lt;/p&gt;
+
+&lt;h2 id=&#34;website-scraper&#34;&gt;Website Scraper&lt;/h2&gt;
+
+&lt;p&gt;Riot&amp;rsquo;s API did not have any valuable player stats. Nor was there any other API that existed for this. We created a scraper for the most popular fan made website. It runs an exact match search on the website and returns the stats if the player is found.&lt;/p&gt;
+
+&lt;h2 id=&#34;event-manager&#34;&gt;Event Manager&lt;/h2&gt;
+
+&lt;p&gt;This is the most important peice of the application. My co-founder Phil wrote it in python. I later rewrote it in golang. It polls Riot&amp;rsquo;s API for new games and for new ended games. It then updates our database.&lt;/p&gt;
+
+&lt;p&gt;With some experimentation, business side realized people didn&amp;rsquo;t care about amateur games. They only wanted to bet on pro players. We added a clause to only add games to our database that contained pro players in the match.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title></title>
       <link>https://collinglass.github.io/lessons/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>GamerBet -- Hola, I&#39;m Collin!</title>
+
+    
+
+    
+    <link href="https://collinglass.github.io//css/bootstrap.min.css" rel="stylesheet">
+
+    
+    <link href="https://collinglass.github.io//css/clean-blog.min.css" rel="stylesheet">
+
+    
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    
+    
+    
+
+</head>
+
+<body>
+
+    
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://collinglass.github.io/">Hola, I&#39;m Collin!</a>
+            </div>
+
+                       
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <li>
+                        <a href="https://collinglass.github.io/">home</a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://collinglass.github.io/about/">About</a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://collinglass.github.io/creations/">Creations</a>
+                    </li>
+                    
+                  </ul>
+            </div>
+           
+
+        </div>
+        
+    </nav>
+
+
+    
+    
+    <header class="intro-header" style="background-image: url('https://collinglass.github.io//img/post-bg.jpg')">
+    
+      <div class="container">
+        <div class="row">
+           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+             <div class="post-heading">
+               <h1>GamerBet</h1>
+               <h2 class="subheading"></h2>
+               <span class="meta">Posted by <a href="#">Collin Glass</a> on Tue, Aug 9, 2016
+                 <br />
+                 In 
+
+                 <br />
+                 Tags 
+               </span>
+             </div>
+           </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                  
+
+<h1 id="overview">Overview</h1>
+
+<p>As a whole, the application is a real-time betting platform.</p>
+
+<p>The application polls Riot&rsquo;s API for new games and inserts them into the database through The Great Gamerbet API. When a new game is added, we run a web scraper for each player to get their latest stats.</p>
+
+<p>The application polls Riot&rsquo;s API for recently ended games then updates them if they were present in the database. When a game ends we sent a Server Sent Event to every client. Any connected betters get a success or completed modal. Through the web client, users are able to signup for an account and place bets on open games.</p>
+
+<p>Our application components</p>
+
+<ul>
+<li><p>Web client written in Angular.js.</p></li>
+
+<li><p>API written in Golang</p></li>
+
+<li><p>PostgreSQL database</p></li>
+
+<li><p>Website Scraper for LoLKing.com</p></li>
+
+<li><p>Event Manager</p></li>
+
+<li><p>Socket.io WebSockets</p></li>
+</ul>
+
+<p><img src="https://collinglass.github.io/img/work/gamerbet/architecture.png" alt="Architecture" /></p>
+
+<h2 id="web-client">Web client</h2>
+
+<p>The web client was written by my co founder Phil Swanson. It uses websockets with a socket.io service to live update games and alert users on wins and losses.</p>
+
+<h2 id="api">API</h2>
+
+<p>The API consists of a set of HTTP handlers grouped into 3 different access levels.</p>
+
+<h3 id="public">Public</h3>
+
+<p>Public contains all the HTTP requests that are necessary to view the site as a visitor and nothing more. Think, get open games, get leaderboard, and all other visual data.</p>
+
+<h3 id="authenticated">Authenticated</h3>
+
+<p>Authenticated routes are all routes specific to user actions. They require the user be logged in.</p>
+
+<p>We use token based authentication. The way token based auth works in our application is standard. A user enters a username and password. If the username and password are correct, we issue them a secret token. We store their public user data as a value in Redis and use their token as the key. We send them their token in the response to their login request. The client saves the token in their local storage and sends it on every subsequent request.</p>
+
+<p>Whenever a request is made, the API takes the token out of the HTTP headers and checks if Redis has a value on that key. If it does, we take the necessary data from redis and associate it with the given request. For example, a user is placing a bet. We take his user id and assign it to the new bet object so we&rsquo;ll know who placed that bet when it comes time to pay money out.</p>
+
+<h3 id="secret-routes">Secret routes</h3>
+
+<p>Secret routes are used only by internal services. Services are given a unique token that only works with those routes. No client issued token will work with these routes and there are no login routes for these routes.</p>
+
+<p>The event manager POSTs new games to the API. We don&rsquo;t want any maliscious sources to post new games to the API. We generate a single crypto secure token and set it as an ENV variable and use it in the event manager and the API.</p>
+
+<h2 id="postgresql">PostgreSQL</h2>
+
+<p>We use PostgreSQL as our database. GORM Object Relational Mapper is used for most interaction. We have a few routes using custom joins to optimize their speed.</p>
+
+<p>We use primary keys, unique constraints and all the other goodies. Additionally, one thing I like to do is use the database for all my validation. I use CHECKs to check validate input lengths and characters. It keeps all parts of my application in sync. Error messages are transformed into human readable text and bubbled up all the way to the client.</p>
+
+<h2 id="website-scraper">Website Scraper</h2>
+
+<p>Riot&rsquo;s API did not have any valuable player stats. Nor was there any other API that existed for this. We created a scraper for the most popular fan made website. It runs an exact match search on the website and returns the stats if the player is found.</p>
+
+<h2 id="event-manager">Event Manager</h2>
+
+<p>This is the most important peice of the application. My co-founder Phil wrote it in python. I later rewrote it in golang. It polls Riot&rsquo;s API for new games and for new ended games. It then updates our database.</p>
+
+<p>With some experimentation, business side realized people didn&rsquo;t care about amateur games. They only wanted to bet on pro players. We added a clause to only add games to our database that contained pro players in the match.</p>
+
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                  <ul class="list-inline text-center">
+                    <li>
+                      <a href="mailto:collinglass92@gmail.com">
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                    </li>
+                    
+                    <li>
+                      <a href="https://twitter.com/collinglass">
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                    </li>
+                    
+                    <li>
+                      <a href="https://github.com/collinglass">
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                    </li>
+                    
+                    <li>
+                      <a href="https://www.facebook.com/collin.glass">
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                        </span>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                  <p class="copyright text-muted">Code released under the Apache 2.0 license.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="https://collinglass.github.io//js/jquery.min.js"></script>
+
+    
+    <script src="https://collinglass.github.io//js/bootstrap.min.js"></script>
+
+    
+    <script src="https://collinglass.github.io//js/clean-blog.js"></script>
+
+    
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'XX-00000000-0', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body>
+
+</html>
+
