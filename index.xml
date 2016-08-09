@@ -1,12 +1,235 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Collin Glass</title>
+    <title>Hola, I&#39;m Collin!</title>
     <link>https://collinglass.github.io/</link>
-    <description>Recent content on Collin Glass</description>
+    <description>Recent content on Hola, I&#39;m Collin!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>Code released under the Apache 2.0 license.</copyright>
+    <lastBuildDate>Sun, 24 May 2015 18:51:50 +0200</lastBuildDate>
     <atom:link href="https://collinglass.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>About</title>
+      <link>https://collinglass.github.io/about/</link>
+      <pubDate>Sun, 24 May 2015 18:51:50 +0200</pubDate>
+      
+      <guid>https://collinglass.github.io/about/</guid>
+      <description>
+
+&lt;h1 id=&#34;technical-opportunities&#34;&gt;Technical Opportunities&lt;/h1&gt;
+
+&lt;p&gt;I&amp;rsquo;m open to technical opportunities of all kinds. I work best using React.js, React Native or Golang.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve had the opportunity to work on some great projects with even better people. Here are a few nice memories I&amp;rsquo;d like to share.&lt;/p&gt;
+
+&lt;p&gt;I co-built a &lt;a href=&#34;https://collinglass.github.io/gamerbet/&#34;&gt;real-time Esports betting platform&lt;/a&gt; when I co-founded GamerBet.&lt;/p&gt;
+
+&lt;p&gt;I built a UX dashboard at Macadamian which is know delivered to customers with UX work. I pitched it for a job application a few years ago here: &lt;a href=&#34;https://www.youtube.com/watch?v=vGXvfMNC9rY&#34;&gt;https://www.youtube.com/watch?v=vGXvfMNC9rY&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I went on to build out 6 beautiful graphs with D3.js for an Ionic app. Here&amp;rsquo;s what the Chief Architect at Macadamian had to say about my work. &lt;a href=&#34;https://www.linkedin.com/in/collinglass#recommendations&#34;&gt;https://www.linkedin.com/in/collinglass#recommendations&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;growth-opportunities&#34;&gt;Growth Opportunities&lt;/h1&gt;
+
+&lt;p&gt;I was drawn to Growth roles the minute I heard about them. Since I was in high school I&amp;rsquo;ve felt equally interested in business and programming. I&amp;rsquo;ve always known I wanted to be somewhere in the harmony of both.&lt;/p&gt;
+
+&lt;p&gt;In all startups I&amp;rsquo;ve been a part of, I&amp;rsquo;ve held CTO and developer roles. I&amp;rsquo;ve built the tech stack, each one has gotten farther along than the last. Each time there has been a problem with traction and revenue.&lt;/p&gt;
+
+&lt;p&gt;I started my growthhackers.com account around Christmas 2015. I started &lt;a href=&#34;https://collinglass.github.io/my-first-growth-project/&#34;&gt;running experiments&lt;/a&gt; on the side in July 2016.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m open to opportunities in Growth and Technical business roles.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Creations</title>
+      <link>https://collinglass.github.io/creations/</link>
+      <pubDate>Sun, 24 May 2015 18:51:50 +0200</pubDate>
+      
+      <guid>https://collinglass.github.io/creations/</guid>
+      <description>
+
+&lt;p&gt;Here you&amp;rsquo;ll find everything I&amp;rsquo;ve created worth mentioning. If you genuinely think it&amp;rsquo;s cool, don&amp;rsquo;t hesitate to show so love.&lt;/p&gt;
+
+&lt;h3 id=&#34;mvbi&#34;&gt;MVBI&lt;/h3&gt;
+
+&lt;p&gt;Minimum Viable Business Intelligence is a simple mobile app that allows you to get up to date information on how your business is doing. I wrote about &lt;a href=&#34;https://collinglass.github.io/minimum-viable-business-intelligence/&#34;&gt;why you need it and why you would buy it instead of building it in-house&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>My first growth project</title>
+      <link>https://collinglass.github.io/my-first-growth-project/</link>
+      <pubDate>Tue, 09 Aug 2016 18:56:35 -0400</pubDate>
+      
+      <guid>https://collinglass.github.io/my-first-growth-project/</guid>
+      <description>
+
+&lt;p&gt;At the time, Pokemon Go had not been released in Canada at the time. Many small businesses were already capitalizing on the local opportunity in the U.S.&lt;/p&gt;
+
+&lt;p&gt;My biz partner Mark and I decided to see if local businesses in our community were interested in a managed Pokemon Go service.&lt;/p&gt;
+
+&lt;p&gt;We also wanted to test to see if marketers and growth hackers are looking for an authoritative source in marketing to Pokemon Go players.&lt;/p&gt;
+
+&lt;p&gt;We have two ideas to test:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Marketers are looking for an authoritative source to market to Pokemon Go players&lt;/li&gt;
+&lt;li&gt;Local businesses will pay for a managed service&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;We decided we would start testing idea 1 with a landing page. Idea 2 was better suited for cold call emailing.&lt;/p&gt;
+
+&lt;p&gt;We also decided that this venture needed to make at least 1,000$/month for it to make sense for us.&lt;/p&gt;
+
+&lt;h1 id=&#34;test-1&#34;&gt;Test #1&lt;/h1&gt;
+
+&lt;p&gt;We were excited to put together a landing page and launch it to Growth Hackers. We figured this is buzzing right now, we&amp;rsquo;ll be able to score a few 100 signups.&lt;/p&gt;
+
+&lt;p&gt;We did some research. Shops were seeing increases in sales by adding lure modules to the nearest pokestop around their business. We decided to put together a PDF guide on how to add a lure module to your business.&lt;/p&gt;
+
+&lt;p&gt;We created a landing page that required an email opt-in to get the guide.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://collinglass.github.io/img/first-landing-pokebiz.png&#34; width=&#34;750&#34; alt=&#34;First Landing Page&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;We waited until the next morning to post it. We then posted it to GrowthHackers got a few friends to upvote to give it some initial traction.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s what it looked like:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://collinglass.github.io/img/gh-pokebiz.png&#34; width=&#34;750&#34; alt=&#34;Pokebiz&#39;s first article on GH&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;We waited 14 days before concluding the results.&lt;/p&gt;
+
+&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
+
+&lt;p&gt;We got 6 upvotes from our friends which got us in the trending.&lt;/p&gt;
+
+&lt;p&gt;The results were disappointing:&lt;/p&gt;
+
+&lt;p&gt;We got 0 organic upvotes.&lt;/p&gt;
+
+&lt;p&gt;257 views and 4 email opt-ins.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s about a 1.56% conversion rate.&lt;/p&gt;
+
+&lt;h2 id=&#34;analysis&#34;&gt;Analysis&lt;/h2&gt;
+
+&lt;p&gt;This was a fail.&lt;/p&gt;
+
+&lt;p&gt;We believe this experiment failed for many reasons.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;There are other more authoritive sites covering pokemon go marketing already.&lt;/li&gt;
+&lt;li&gt;There are other sites where you can get this guide without entering your email.&lt;/li&gt;
+&lt;li&gt;People are unsure or don&amp;rsquo;t believe Pokemon Go is worth investing time into.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In hindsight, it may seem obvious this wasn&amp;rsquo;t going to work. In the moment it felt better to test.&lt;/p&gt;
+
+&lt;h1 id=&#34;test-2&#34;&gt;Test #2&lt;/h1&gt;
+
+&lt;p&gt;Once the landing page was out we started working on our email campaign.&lt;/p&gt;
+
+&lt;p&gt;We decided to go after pizza shops and coffee shops. They were the businesses getting the most attention in the press.&lt;/p&gt;
+
+&lt;p&gt;I wrote a script that scraped facebook for leads. I got 113 Ottawa coffee shops with emails and about the same for pizza shops.&lt;/p&gt;
+
+&lt;p&gt;Mark wrote the email and we included a link to our website. We finished scraping and writing up the email on Saturday. We scheduled the email blast for first thing Monday morning.&lt;/p&gt;
+
+&lt;p&gt;Our emails went out a day after Pokemon Go was released in Canada, our timing was perfect.&lt;/p&gt;
+
+&lt;h2 id=&#34;results-1&#34;&gt;Results&lt;/h2&gt;
+
+&lt;p&gt;We got 11 replies wanting to schedule a meeting. We were pumped.&lt;/p&gt;
+
+&lt;p&gt;We felt like we had validation. Everytime I got a new email back we had a big grin on our face.&lt;/p&gt;
+
+&lt;p&gt;We scheduled meetings starting Wednesday morning, only two days away. We were moving fast.&lt;/p&gt;
+
+&lt;p&gt;I knew I didn&amp;rsquo;t want to go into these meetings pitching. I wanted to do customer development. But, I also needed to have answers to their questions. We took to the whiteboard again and put together an offering.&lt;/p&gt;
+
+&lt;p&gt;For 60$/month:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Advertisement on our Pokemon Groups&lt;/li&gt;
+&lt;li&gt;Guides/Installation Support&lt;/li&gt;
+&lt;li&gt;Insights&lt;/li&gt;
+&lt;li&gt;One 4 hour event&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We came out with this number with a mix of cost calculations and revenue projections. It would take us 20 customers to make 1200$/month. Not a lot of money but it was a number that motivated us for a side project.&lt;/p&gt;
+
+&lt;p&gt;Note, we never pitched this offering in the meeting. Instead, it provided Mark and I a base point we were comfortable with. This allowed us to ask the right questions and feel out if this was going to be a viable business.&lt;/p&gt;
+
+&lt;p&gt;Over the course of the next week we had 1 in-person meeting and the rest were over the phone.&lt;/p&gt;
+
+&lt;p&gt;What we found out:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;All the shops were either going to or already putting lures themselves&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;They were all interested in getting insights&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;They were interested in helping us out&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With every meeting, something became clearer. It was going to be hard to make money with this business.&lt;/p&gt;
+
+&lt;h2 id=&#34;analysis-1&#34;&gt;Analysis&lt;/h2&gt;
+
+&lt;p&gt;The local businesses that would profit from a Pokemon Go presence had young staff. They were already running or preparing to run lure modules.&lt;/p&gt;
+
+&lt;p&gt;Our leads were interested in getting insights. But, they weren&amp;rsquo;t ready to pay for insights. If they did, it going to be a large amount of money.&lt;/p&gt;
+
+&lt;p&gt;They were interested in advertising opportunity if we had clear numbers to show them.&lt;/p&gt;
+
+&lt;p&gt;We ran some numbers from the shops point of view.&lt;/p&gt;
+
+&lt;p&gt;If we brought them 40 customer purchases a month at 3$ average sale amount, that gives them:&lt;/p&gt;
+
+&lt;p&gt;40 * 3$ = 120$&lt;/p&gt;
+
+&lt;p&gt;I looked around online to find coffee shop profit margins. This &lt;a href=&#34;https://www.quora.com/How-much-profit-does-Starbucks-make-on-a-typical-coffee&#34;&gt;quora question&lt;/a&gt; had the best result with 33% profit margin. Calculating their profit:&lt;/p&gt;
+
+&lt;p&gt;120$ * 33% = 40$&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s say we would charge them 25% of that. 10$ a month for our service.&lt;/p&gt;
+
+&lt;p&gt;For this venture to make enough revenue for us we need to scale to at least 100 customers. Which means we&amp;rsquo;d had to be responsible for 4,000 customer purchases a month.&lt;/p&gt;
+
+&lt;p&gt;Our Facebook Group only had +400 members and the top Facebook group in Ottawa only had 2,000 members.&lt;/p&gt;
+
+&lt;p&gt;We looked at increasing monthly fee to 20$, requiring us to scale to at least 50 customers. We would have to be responsible for 2,000 customer purchases a month. Even with the combined reach of the existing Facebook, Slack and Discord communities, this wouldn&amp;rsquo;t work.&lt;/p&gt;
+
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;We deemed this business not viable.&lt;/p&gt;
+
+&lt;p&gt;The profits were too low for our interest. Additionally, this business is at the mercy of the popularity of Pokemon Go. Mark and I are not confident enough that it&amp;rsquo;s here to stay. Especially here in Ottawa where it&amp;rsquo;ll be -20 outside in a short few months.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://collinglass.github.io/lessons/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://collinglass.github.io/lessons/</guid>
+      <description>&lt;p&gt;date = &amp;ldquo;2015-05-24T18:51:50+02:00&amp;rdquo;
+menu = &amp;ldquo;main&amp;rdquo;
+title = &amp;ldquo;Lessons&amp;rdquo;
+type = &amp;ldquo;about&amp;rdquo;
+weight = -190
++++&lt;/p&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?&lt;/p&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in officia voluptas voluptatibus, minus!&lt;/p&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum molestiae debitis nobis, quod sapiente qui voluptatum, placeat magni repudiandae accusantium fugit quas labore non rerum possimus, corrupti enim modi! Et. &amp;ndash;&amp;gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title></title>

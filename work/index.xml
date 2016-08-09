@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Works on Collin Glass</title>
+    <title>Works on Hola, I&#39;m Collin!</title>
     <link>https://collinglass.github.io/work/</link>
-    <description>Recent content in Works on Collin Glass</description>
+    <description>Recent content in Works on Hola, I&#39;m Collin!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>Code released under the Apache 2.0 license.</copyright>
     <atom:link href="https://collinglass.github.io/work/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
